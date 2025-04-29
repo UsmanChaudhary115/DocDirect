@@ -29,7 +29,7 @@
         Swal.fire({
             title: 'Logging Out...',
             text: 'You are being signed out...',
-            icon: 'info',
+            icon: 'success',
             iconColor: '#ff0000',
             timer: 2000,
             showConfirmButton: false

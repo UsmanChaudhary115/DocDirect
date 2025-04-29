@@ -1,0 +1,89 @@
+﻿@model Core.Entities.ProfileViewModel
+@{
+    ViewData["Title"] = "Profile";
+    Layout = "_PatientLayout";
+}
+
+<div class="container my-5">
+    <h2 class="text-center mb-4 display-4 fw-bold">Your Profile</h2>
+    @if(TempData["Message"] != null)
+    {
+        <div class="alert alert-success" role="alert">
+            @TempData["Message"]
+        </div>
+    }
+    <div class="card shadow-sm mb-5">
+        <div class="card-body glassmorphic p-4">
+            <form asp-action="UpdateProfile" method="post">
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Full Name</label>
+                    <input asp-for="Name" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Email</label>
+                    <input asp-for="Email" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Disease</label>
+                    <input asp-for="Disease" class="form-control" />
+                </div>
+                <hr />
+                <h5 class="fw-semibold mb-3">Change Password</h5>
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">New Password</label>
+                    <input asp-for="NewPassword" class="form-control" type="password" autocomplete="new-password" placeholder="Enter your new password" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Confirm New Password</label>
+                    <input asp-for="ConfirmPassword" class="form-control" type="password"  autocomplete="new-password" placeholder="Confirm your new password" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Old Password</label>
+                    <input asp-for="OldPassword" class="form-control" type="password"  autocomplete="off" placeholder="Enter your old password to confirm" />
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Update Profile</button>
+            </form>
+        </div>
+    </div>
+    @if(Model.Appointments != null)
+    {
+        <h3 class="mb-4 fw-bold">Your Appointments</h3>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            @foreach (var appointment in Model.Appointments)
+            {
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-semibold">@appointment.Doctor?.Name</h5>
+                            <p class="card-text"><strong>Specialization:</strong> @appointment.Doctor?.Specialization</p>
+                            <p class="card-text"><strong>Date:</strong> @appointment.AppointmentDate.ToString("yyyy-MM-dd HH:mm")</p>
+                            <p class="card-text"><strong>Description:</strong> @appointment.Description</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <h3 class="mb-4 fw-bold">No Appointments Found</h3>
+    }
+</div>
+
+<style>
+    .glassmorphic {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .card {
+        transition: transform 0.2s;
+    }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+</style>

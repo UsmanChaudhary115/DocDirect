@@ -1,7 +1,9 @@
 ﻿using Core.Entities;
+using Infrastructure.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 
 namespace HMS.web.Controllers
@@ -10,11 +12,13 @@ namespace HMS.web.Controllers
     {
         private readonly UserManager<Patient> _userManager;
         private readonly SignInManager<Patient> _signInManager;
+        private readonly HospitalDbContext _context;
 
-        public PatientController(UserManager<Patient> userManager, SignInManager<Patient> signInManager)
+        public PatientController(UserManager<Patient> userManager, SignInManager<Patient> signInManager, HospitalDbContext context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _context = context;
         }
         [Authorize]
         public IActionResult Index()
@@ -52,6 +56,87 @@ namespace HMS.web.Controllers
             }
 
             return PartialView("_DoctorCardList", doctors);
+        }
+        [Authorize]
+        public async Task<IActionResult> Profile()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null) return RedirectToAction("Signin");
+
+            //var appointments = _context.Appointments
+            //    .Where(a => a.PatientId == user.Id)
+            //    .Include(a => a.Doctor)
+            //    .ToList();
+            var appointments = new List<Appointment>
+            {
+                new Appointment
+                {
+                    AppointmentId = 1,
+                    PatientId = user.Id,
+                    AppointmentDate = DateTime.Now.AddDays(1),
+                    Description = "Routine Checkup",
+                    Doctor = new Doctor { DoctorId = 1, Name = "Dr. Amanda Jepson", Specialization = "Neurosurgeon" }
+                },
+                new Appointment
+                {
+                    AppointmentId = 2,
+                    PatientId = user.Id,
+                    AppointmentDate = DateTime.Now.AddDays(3),
+                    Description = "Follow-up for MRI results",
+                    Doctor = new Doctor { DoctorId = 2, Name = "Dr. Taylor", Specialization = "Cardiologist" }
+                },
+                new Appointment
+                {
+                    AppointmentId = 3,
+                    PatientId = user.Id,
+                    AppointmentDate = DateTime.Now.AddDays(5),
+                    Description = "Eye examination",
+                    Doctor = new Doctor { DoctorId = 3, Name = "Dr. Archer", Specialization = "Ophthalmologist" }
+                }
+            };  
+            var model = new ProfileViewModel
+            {
+                Disease = user.Disease,
+                Name = user.Name,
+                Email = user.Email,
+                //Appointments = appointments
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UpdateProfile(ProfileViewModel model)
+        {
+            if (model.NewPassword != null && !ModelState.IsValid || (model.NewPassword != model.ConfirmPassword))
+                return View("Profile", model);
+
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null) return RedirectToAction("Signin");
+
+            user.Name = model.Name;
+            user.Email = model.Email;
+            user.UserName = model.Email;
+            user.Disease = model.Disease;
+
+            var result = await _userManager.UpdateAsync(user);
+            if (!result.Succeeded)
+            {
+                ModelState.AddModelError("", "Failed to update profile.");
+                return View("Profile", model);
+            }
+
+            if (!string.IsNullOrEmpty(model.OldPassword) && !string.IsNullOrEmpty(model.NewPassword))
+            {
+                var passResult = await _userManager.ChangePasswordAsync(user, model.OldPassword, model.NewPassword);
+                if (!passResult.Succeeded)
+                {
+                    ModelState.AddModelError("", "Failed to update password.");
+                    return View("Profile", model);
+                }
+            }
+            TempData["Message"] = "Profile updated successfully.";
+            return RedirectToAction("Profile");
         }
 
         public IActionResult Signup()
@@ -111,7 +196,7 @@ namespace HMS.web.Controllers
 
             return View(model);
         }
-
+        [Authorize]
         public IActionResult SignOutConfirmation()
         {
             return View();
@@ -120,7 +205,7 @@ namespace HMS.web.Controllers
         {
             // Sign out the user
             await _signInManager.SignOutAsync();
-            return RedirectToAction("Signin", "Patient");
+            return RedirectToAction("Index", "Home");
         }
     }
 }
