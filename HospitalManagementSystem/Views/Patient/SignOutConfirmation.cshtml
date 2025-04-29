@@ -1,0 +1,102 @@
+﻿@{
+    Layout = "_PatientLayout";
+    ViewData["Title"] = "Confirm Sign Out";
+}
+
+<div class="d-flex justify-content-center m-5">
+    <div class="container1 confirm-box">
+        <h2 class="text-white">Confirm Sign Out</h2>
+        <p class="message">Are you sure you want to sign out? You will need to log in again to access your account.</p>
+
+        <div class="text-center">
+            <!-- Yes Button -->
+            <form method="post" asp-action="SignOut">
+                <button type="submit" class="btn btn-danger" onclick="showSignOutMessage(event)">Yes, Sign Out</button>
+            </form>
+
+            <!-- No Button -->
+            <form method="get" asp-action="Index">
+                <button type="submit" class="btn btn-secondary">No, Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function showSignOutMessage(event) {
+        event.preventDefault();
+        Swal.fire({
+            title: 'Logging Out...',
+            text: 'You are being signed out...',
+            icon: 'info',
+            timer: 2000,
+            showConfirmButton: false
+        }).then(() => {
+            // Submit the form after a slight delay to show the message
+            event.target.closest('form').submit();
+        });
+    }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<style>
+        .container1 {
+        background: linear-gradient(135deg, red, black);
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 500px;
+        text-align: center;
+        color: #fff;
+        animation: fadeIn 1s ease-out;
+    }
+
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        font-weight: 700;
+    }
+
+    .message {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+        color: #ddd;
+    }
+
+    .btn {
+        width: 200px;
+        padding: 12px;
+        font-size: 1.1rem;
+        border-radius: 5px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .btn-danger {
+        background-color: #e63946;
+        border-color: #e63946;
+        margin-bottom: 10px;
+    }
+
+    .btn-secondary {
+        background-color: #adb5bd;
+        border-color: #adb5bd;
+    }
+
+    .btn:hover {
+        opacity: 0.9;
+        transform: translateY(-2px);
+    }
+
+    .btn-danger:hover {
+        background-color: #d62828;
+        border-color: #d62828;
+    }
+
+    .btn-secondary:hover {
+        background-color: #868e96;
+        border-color: #868e96;
+    }
+</style>

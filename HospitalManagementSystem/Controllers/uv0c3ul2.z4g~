@@ -1,0 +1,125 @@
+﻿using Core.Entities;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
+
+namespace HMS.web.Controllers
+{
+    public class PatientController : Controller
+    {
+        private readonly UserManager<Patient> _userManager;
+        private readonly SignInManager<Patient> _signInManager;
+
+        public PatientController(UserManager<Patient> userManager, SignInManager<Patient> signInManager)
+        {
+            _userManager = userManager;
+            _signInManager = signInManager;
+        }
+        [Authorize]
+        public IActionResult Index()
+        {
+            ViewBag.UserName = User.Identity.Name;
+            
+            var doctors = new List<Doctor>
+            {
+
+                new Doctor { DoctorId = 1, Name = "Dr. Amanda Jepson", Specialization = "Neurosurgeon" },
+                new Doctor{ DoctorId = 2, Name = "Dr. Taylor", Specialization = "Cardiologist" },
+                new Doctor{ DoctorId = 3, Name = "Dr. Archer", Specialization = "Ophthalmologist" },
+                new Doctor { DoctorId = 4, Name = "Dr. Penny", Specialization = "Psychiatrist" },
+                new Doctor { DoctorId = 5, Name = "Dr. Riley", Specialization = "Gynecologist" }
+            };
+            return View(doctors);
+        }
+        public IActionResult SearchDoctors(string query)
+        {
+            var doctors = new List<Doctor>
+    {
+        new Doctor { DoctorId = 1, Name = "Dr. Amanda Jepson", Specialization = "Neurosurgeon" },
+        new Doctor{ DoctorId = 2, Name = "Dr. Taylor", Specialization = "Cardiologist" },
+        new Doctor{ DoctorId = 3, Name = "Dr. Archer", Specialization = "Ophthalmologist" },
+        new Doctor { DoctorId = 4, Name = "Dr. Penny", Specialization = "Psychiatrist" },
+        new Doctor { DoctorId = 5, Name = "Dr. Riley", Specialization = "Gynecologist" }
+    };
+
+            if (!string.IsNullOrWhiteSpace(query))
+            {
+                doctors = doctors
+                    .Where(d => d.Name.Contains(query, StringComparison.OrdinalIgnoreCase)
+                             || d.Specialization.Contains(query, StringComparison.OrdinalIgnoreCase))
+                    .ToList();
+            }
+
+            return PartialView("_DoctorCardList", doctors);
+        }
+
+        public IActionResult Signup()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Signup(RegisterViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var patient = new Patient
+                {
+                    UserName = model.Email,
+                    Email = model.Email,
+                    Name = model.Name
+                };
+
+                var result = await _userManager.CreateAsync(patient, model.Password);
+                if (result.Succeeded)
+                { 
+                    return RedirectToAction("Signin", "Patient");
+                }
+
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
+                }
+            }
+
+            return View(model);
+        }
+
+        public IActionResult Signin()
+        {
+            TempData["Message"] = "Please enter your credentials to access your account.";
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Signin(SignInViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, isPersistent: false, lockoutOnFailure: false);
+                if (result.Succeeded)
+                {
+                    var user = await _userManager.FindByEmailAsync(model.Email);
+                    Console.WriteLine(user?.Name); // user.Name
+                    return RedirectToAction("Index", "Patient");
+                }
+                TempData["Message"] = "Email or password is incorrect.";
+                ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+            }
+
+            return View(model);
+        }
+
+        public IActionResult SignOutConfirmation()
+        {
+            return View();
+        }
+        public async Task<IActionResult> SignOut()
+        {
+            // Sign out the user
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Signin", "Patient");
+        }
+    }
+}

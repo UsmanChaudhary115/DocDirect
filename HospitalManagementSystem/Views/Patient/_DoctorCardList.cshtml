@@ -1,0 +1,15 @@
+﻿@model List<Core.Entities.Doctor>
+
+@foreach (var doctor in Model)
+{
+    <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm p-3">
+            <img src="~/img/doctors/doctors-1.jpg" class="card-img-top img-fluid w-100" alt="Doctor Photo">
+            <div class="card-body">
+                <h5 class="card-title">@doctor.Name</h5>
+                <p class="card-text mb-1"><strong>Specialty:</strong> @doctor.Specialization</p>    
+                <span class="badge bg-success">Available Now</span>
+            </div>
+        </div>
+    </div>
+}

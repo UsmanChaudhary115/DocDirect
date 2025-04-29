@@ -1,0 +1,531 @@
+﻿@model Core.Entities.IndexViewModel
+<!-- Hero Section -->
+   <section id="hero" class="hero section light-background">
+       <img src="~/img/hero-bg.jpg" alt="" data-aos="fade-in">
+       <div class="container position-relative">
+           <div class="welcome position-relative" data-aos="fade-down" data-aos-delay="100">
+               <h2>WELCOME TO DocDirect</h2>
+           </div><!-- End Welcome -->
+           <div class="content row gy-4">
+               <div class="col-lg-4 d-flex align-items-stretch">
+                   <div class="why-box" data-aos="zoom-out" data-aos-delay="200">
+                       <h3>Why Choose DocDirect?</h3>
+                       <p>
+                   DocDirect is your one-stop solution for managing healthcare appointments with ease, efficiency, and trust. Check more details why people prefer <strong>DocDirect</strong>.
+                       </p>
+                       <div class="text-center">
+                           <a href="#about" class="more-btn"><span>Learn More</span> <i class="bi bi-chevron-right"></i></a>
+                       </div>
+                   </div>
+               </div><!-- End Why Box -->
+           </div><!-- End  Content-->
+       </div>
+   </section><!-- /Hero Section -->
+<div class="d-flex justify-content-center pt-5">
+    <a asp-action="Signin" asp-controller="Patient" class="btn" id="bottone1"><strong>Get Started</strong></a>
+</div>
+
+    
+   <!-- About Section -->
+   <section id="about" class="about section">
+       <div class="container">
+           <div class="row gy-4 gx-5">
+               <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="200">
+                    <img src="~/img/about.jpg" class="img-fluid" alt="">
+                    <a href="https://youtu.be/74DWwSxsVSs" class="glightbox pulsating-play-btn"></a>
+              </div>
+               <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
+                   <h3>About Us</h3>
+                   <p>
+                    DocDirect simplifies healthcare by enabling easy appointment scheduling with professional doctors. Our platform provides quick access to quality care, allowing patients to book appointments at their convenience, whether for routine check-ups or specialized consultations.
+                   </p>
+                   <ul>
+                       <li>
+                           <i class="fa-solid fa-vial-circle-check"></i>
+                           <div>
+                            <h5>Our Vision</h5>
+                            <p>
+                                We aim to make healthcare easily accessible with seamless online appointment booking, putting patients in control of their healthcare journey.
+                            </p>
+                           </div>
+                       </li>
+                       <li>
+                           <i class="fa-solid fa-pump-medical"></i>
+                           <div>
+                            <h5>Streamlined Scheduling</h5>
+                            <p>DocDirect lets you effortlessly book appointments with top doctors at your preferred time, eliminating long wait times.</p>
+                           </div>
+                       </li>
+                       <li>
+                           <i class="fa-solid fa-heart-circle-xmark"></i>
+                           <div>
+                            <h5>Patient-Centered Care</h5>
+                            <p>We prioritize your health by offering a user-friendly platform that provides appointment reminders and updates, giving you control over your care.</p>
+                           </div>
+                       </li>
+                   </ul>
+               </div>
+           </div>
+       </div>
+   </section><!-- /About Section -->
+   <!-- Stats Section -->
+<section id="stats" class="stats section light-background">
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-3">
+
+            <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center">
+                <i class="fa-solid fa-user-doctor"></i>
+                <div class="stats-item">
+                    <span data-purecounter-start="0" data-purecounter-end="@ViewBag.NumberOfDoc" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>Doctors</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center">
+                <i class="fa-regular fa-hospital"></i>
+                <div class="stats-item">
+                    <span data-purecounter-start="0" data-purecounter-end="18" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>Registered Patients</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center">
+                <i class="fas fa-award"></i>
+                <div class="stats-item">
+                    <span data-purecounter-start="0" data-purecounter-end="150" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>Successful Dealings</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+        <!-- Services Section -->
+        <section id="services" class="services section">
+
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Services</h2>
+        <p>All-in-One Healthcare Platform for Your Needs</p>
+            </div><!-- End Section Title -->
+
+            <div class="container">
+
+                <div class="row gy-4">
+
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="service-item  position-relative">
+                            <div class="icon">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <a href="#" class="stretched-link">
+                        <h3>Doctor Appointment Booking</h3>
+                            </a>
+                    <p>Effortlessly search and book appointments with doctors, specialists, and clinics near you.</p>
+                        </div>
+                    </div><!-- End Service Item -->
+
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="service-item position-relative">
+                            <div class="icon">
+                                <i class="fas fa-pills"></i>
+                            </div>
+                            <a href="#" class="stretched-link">
+                        <h3>Prescription Management</h3>
+                            </a>
+                    <p>Easily view and download prescriptions from your doctor after consultations, and track medication refills.<p>
+                        </div>
+                    </div><!-- End Service Item -->
+
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="service-item position-relative">
+                            <div class="icon">
+                                <i class="fas fa-hospital-user"></i>
+                            </div>
+                            <a href="#" class="stretched-link">
+                        <h3>Virtual Consultations</h3>
+                            </a>
+                    <p>Consult with healthcare professionals via secure video calls, making healthcare more accessible from the comfort of your home.</p>
+                        </div>
+                    </div><!-- End Service Item -->
+
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                        <div class="service-item position-relative">
+                            <div class="icon">
+                                <i class="fas fa-dna"></i>
+                            </div>
+                            <a href="#" class="stretched-link">
+                        <h3>Appointment Reminders & Notifications</h3>
+                            </a>
+                    <p>Receive timely reminders and notifications for your upcoming appointments to stay on track with your healthcare.</p>
+                            <a href="#" class="stretched-link"></a>
+                        </div>
+                    </div><!-- End Service Item -->
+
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                        <div class="service-item position-relative">
+                            <div class="icon">
+                                <i class="fas fa-wheelchair"></i>
+                            </div>
+                            <a href="#" class="stretched-link">
+                        <h3>Medical History Management</h3>
+                            </a>
+                    <p>Store and manage your medical records, prescriptions, and appointment history for quick access whenever needed.</p>
+                            <a href="#" class="stretched-link"></a>
+                        </div>
+                    </div><!-- End Service Item -->
+
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                        <div class="service-item position-relative">
+                            <div class="icon">
+                                <i class="fas fa-notes-medical"></i>
+                            </div>
+                            <a href="#" class="stretched-link">
+                        <h3>Health-Related Articles & Tips</h3>
+                            </a>
+                    <p>
+                        Access valuable health content, articles, and wellness tips to keep you informed and promote healthier living.p>
+                            <a href="#" class="stretched-link"></a>
+                        </div>
+                    </div><!-- End Service Item -->
+
+                </div>
+
+            </div>
+
+        </section><!-- /Services Section -->
+        
+        <!-- Departments Section -->
+<section id="departments" class="departments section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Departments</h2>
+        <p>We offer a wide range of specialized care in various medical fields, ensuring the highest quality of treatment and expertise for all patients.</p>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row">
+            <div class="col-lg-3">
+                <ul class="nav nav-tabs flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active show" data-bs-toggle="tab" href="#departments-tab-1">Cardiology</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#departments-tab-2">Neurology</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#departments-tab-3">Hepatology</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#departments-tab-4">Pediatrics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#departments-tab-5">Eye Care</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-9 mt-4 mt-lg-0">
+                <div class="tab-content">
+                    <div class="tab-pane active show" id="departments-tab-1">
+                        <div class="row">
+                            <div class="col-lg-8 details order-2 order-lg-1">
+                                <h3>Cardiology</h3>
+                                <p class="fst-italic">We provide expert care for heart-related conditions, ensuring timely diagnosis and effective treatment for all patients.</p>
+                                <p>Our cardiology department specializes in the prevention, diagnosis, and treatment of heart diseases. We offer advanced diagnostic tools and therapeutic interventions, from routine checkups to life-saving surgeries. Whether you need a routine ECG or complex heart surgery, our expert cardiologists are here to ensure the best possible care.</p>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="departments-tab-2">
+                        <div class="row">
+                            <div class="col-lg-8 details order-2 order-lg-1">
+                                <h3>Neurology</h3>
+                                <p class="fst-italic">Our neurology department offers expert care for a range of neurological disorders, ensuring patients receive the highest standard of treatment.</p>
+                                <p>We specialize in diagnosing and treating conditions related to the nervous system, including brain, spinal cord, and nerve disorders. From headaches to stroke, and neurodegenerative diseases like Alzheimer's, our neurologists use the latest technology to provide accurate diagnoses and effective treatments tailored to each patient’s needs.</p>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="departments-tab-3">
+                        <div class="row">
+                            <div class="col-lg-8 details order-2 order-lg-1">
+                                <h3>Hepatology</h3>
+                                <p class="fst-italic">Our hepatology department focuses on the prevention, diagnosis, and treatment of liver diseases to improve patient outcomes.</p>
+                                <p>Hepatology is a branch of medicine concerned with the liver, pancreas, and biliary tree. Our team provides advanced diagnostic services, including liver biopsies and imaging, and offers treatments for conditions like hepatitis, cirrhosis, and liver cancer. We emphasize patient education and personalized care plans to manage chronic conditions and ensure the best possible health outcomes.</p>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="departments-tab-4">
+                        <div class="row">
+                            <div class="col-lg-8 details order-2 order-lg-1">
+                                <h3>Pediatrics</h3>
+                                <p class="fst-italic">Our pediatric department offers comprehensive care for children, from newborns to adolescents, ensuring they grow and thrive healthily.</p>
+                                <p>We are committed to providing top-quality medical care to children of all ages. Our pediatricians are experienced in treating a wide range of conditions, from minor illnesses to complex medical issues. Whether it’s a routine check-up or a more specialized treatment, we are here to support your child's health and development at every stage of life.</p>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="departments-tab-5">
+                        <div class="row">
+                            <div class="col-lg-8 details order-2 order-lg-1">
+                                <h3>Eye Care</h3>
+                                <p class="fst-italic">Our eye care department provides a wide range of services for the treatment and prevention of eye conditions, ensuring clear vision for all.</p>
+                                <p>We offer expert care for a variety of eye conditions, including cataracts, glaucoma, and refractive errors like nearsightedness and farsightedness. Our ophthalmologists utilize the latest technology in diagnostic testing and surgery to treat and manage eye diseases. Whether you need a routine eye exam or advanced eye surgery, we are here to help you maintain healthy vision.</p>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section><!-- /Departments Section -->
+<!-- Doctors Section -->
+<section id="doctors" class="doctors section">
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Doctors</h2>
+        <p>Meet our team of highly skilled doctors</p>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+        <div class="row gy-4">
+
+            @if (Model.Doctors != null && Model.Doctors.Any())
+            {
+                @foreach (var doctor in Model.Doctors)
+                {
+                    <div class="col-lg-6" data-aos="fade-up">
+                        <div class="team-member d-flex align-items-start">
+                            <div class="member-info">
+                                <h4>@doctor.Name</h4>
+                                <span>@doctor.Specialization</span>
+                                <div class="social">
+                                    <a href=""><i class="bi bi-twitter-x"></i></a>
+                                    <a href=""><i class="bi bi-facebook"></i></a>
+                                    <a href=""><i class="bi bi-instagram"></i></a>
+                                    <a href=""><i class="bi bi-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- End Team Member -->
+                }
+            }
+            else
+            {
+                <p>No doctors available at the moment.</p>
+            }
+
+        </div>
+    </div>
+</section><!-- /Doctors Section -->
+
+
+<section id="faq" class="faq section light-background">
+
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Frequently Asked Questions</h2>
+        <p>Get quick answers about how DocDirect works and how it can help you manage hospital operations efficiently.</p>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10" data-aos="fade-up" data-aos-delay="100">
+                <div class="faq-container">
+
+                    <div class="faq-item">
+                        <h3>What is DocDirect?</h3>
+                        <div class="faq-content">
+                            <p>DocDirect is a digital Hospital Management System that streamlines tasks such as doctor management, patient scheduling, and medical appointments through an easy-to-use web interface.</p>
+                        </div>
+                        <i class="faq-toggle bi bi-chevron-right"></i>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Can patients book appointments through DocDirect?</h3>
+                        <div class="faq-content">
+                            <p>Yes, patients can search for available doctors by specialization and book appointments directly through DocDirect.</p>
+                        </div>
+                        <i class="faq-toggle bi bi-chevron-right"></i>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How are doctors managed in DocDirect?</h3>
+                        <div class="faq-content">
+                            <p>Doctors are added and managed via the admin dashboard. Each profile includes the doctor's name, specialization, and availability schedule.</p>
+                        </div>
+                        <i class="faq-toggle bi bi-chevron-right"></i>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Does DocDirect support appointment rescheduling?</h3>
+                        <div class="faq-content">
+                            <p>Yes, both patients and doctors can reschedule or cancel appointments, based on hospital policy and availability.</p>
+                        </div>
+                        <i class="faq-toggle bi bi-chevron-right"></i>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Is DocDirect mobile-friendly?</h3>
+                        <div class="faq-content">
+                            <p>Yes, DocDirect is fully responsive and works seamlessly across smartphones, tablets, and desktops.</p>
+                        </div>
+                        <i class="faq-toggle bi bi-chevron-right"></i>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Does DocDirect provide notifications or reminders?</h3>
+                        <div class="faq-content">
+                            <p>Yes, automated email or SMS notifications can be sent to remind users about upcoming appointments or system updates.</p>
+                        </div>
+                        <i class="faq-toggle bi bi-chevron-right"></i>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<section id="testimonials" class="testimonials section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-5 info" data-aos="fade-up" data-aos-delay="100">
+                <h3>Testimonials</h3>
+                <p>
+                    See what our users have to say about our Hospital Management System.
+                </p>
+            </div>
+            <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
+                @if (Model.Testimonials != null && Model.Testimonials.Any())
+                {
+                    <div class="swiper init-swiper">
+                        <script type="application/json" class="swiper-config">
+                            {
+                                "loop": true,
+                                "speed": 600,
+                                "autoplay": {
+                                    "delay": 5000
+                                },
+                                "slidesPerView": "auto",
+                                "pagination": {
+                                    "el": ".swiper-pagination",
+                                    "type": "bullets",
+                                    "clickable": true
+                                }
+                            }
+                        </script>
+                        <div class="swiper-wrapper">
+                            @foreach (var item in Model.Testimonials)
+                            {
+                                <div class="swiper-slide">
+                                    <div class="testimonial-item">
+                                        <h3>@item.Name</h3>
+                                        <p>
+                                            <i class="bi bi-quote quote-icon-left"></i>
+                                            <span>@item.Testimonial</span>
+                                            <i class="bi bi-quote quote-icon-right"></i>
+                                        </p>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                }
+                else
+                {
+                    <p>No testimonials available at the moment.</p>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact section">
+
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Contact</h2>
+                <p>Get in touch with us for any inquiries or feedback.</p>
+            </div><!-- End Section Title -->
+
+            <div class="mb-5" data-aos="fade-up" data-aos-delay="200">
+        <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3399.275452406809!2d74.30749397415998!3d31.571493444617015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39191d15ddbf0d09%3A0xc564a7eaf4520224!2sKbw%20old%20campus%20hostel!5e0!3m2!1sen!2s!4v1743774509446!5m2!1sen!2s" frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div><!-- End Google Maps -->
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="row gy-4">
+
+                    <div class="col-lg-4">
+                        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                            <i class="bi bi-geo-alt flex-shrink-0"></i>
+                            <div>
+                                <h3>Location</h3>
+                        <a href="https://maps.app.goo.gl/zGFGEZBdGiNipVz66" target="_blank">DocDirect</a>
+                            </div>
+                        </div><!-- End Info Item -->
+
+                        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+                            <i class="bi bi-telephone flex-shrink-0"></i>
+                            <div>
+                                <h3>Call Us</h3>
+                        <a href="tel:+923266180749">+92 326 6180749</a>
+                            </div>
+                        </div><!-- End Info Item -->
+
+                        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
+                            <i class="bi bi-envelope flex-shrink-0"></i>
+                            <div>
+                                <h3>Email Us</h3>
+                        <a href="mailto:usmanalim015@gmail.com">usmanalim015@gmail.com</a>
+                            </div>
+                        </div><!-- End Info Item -->
+
+                    </div>
+
+                    <div class="col-lg-8">
+                        <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+                            <div class="row gy-4">
+
+                                <div class="col-md-6">
+                                    <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                                </div>
+
+                                <div class="col-md-6 ">
+                                    <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                                </div>
+
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                                </div>
+
+                                <div class="col-md-12">
+                                    <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                                </div>
+
+                                <div class="col-md-12 text-center">
+                                    <div class="loading">Loading</div>
+                                    <div class="error-message"></div>
+                                    <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                                    <button type="submit">Send Message</button>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div><!-- End Contact Form -->
+
+                </div>
+
+            </div>
+
+        </section><!-- /Contact Section -->
+
+    
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
