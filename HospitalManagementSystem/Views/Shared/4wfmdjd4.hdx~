@@ -76,11 +76,11 @@
         </div>
     </header>
 
-    <main role="main" class="pb-3" style="overflow-x: hidden;">
+    <main role="main" class="pb-3 bg-black" style="overflow-x: hidden;">
         @RenderBody()
     </main>
 
-    <footer id="footer" class="light-background footer">
+    <footer id="footer" class="light-background footer bg-black">
         <div class="container footer-top">
             <div class="row gy-4">
                 <div class="col-lg-4 col-md-6 footer-about">
@@ -154,7 +154,7 @@
 
     <!-- Main JS File -->
     <script src="~/js/main.js"></script>
-
+    
     <script>
         AOS.init();
     </script>

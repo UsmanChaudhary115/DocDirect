@@ -16,7 +16,7 @@ namespace Core.Entities
     
         public string? Disease { get; set; }
     
-        public List<Appointment> Appointments { get; set; }
+        public List<AppointmentDTO> Appointments { get; set; }
     }
 }
 

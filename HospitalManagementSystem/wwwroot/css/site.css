@@ -98,3 +98,32 @@ body {
         box-shadow: 0 4px 18px rgba(255, 78, 80, 0.6);
     }
 
+
+.glassmorphic {
+    background: rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.form-control:focus {
+    background-color: #222;
+    color: #fff;
+    border: 1px solid #ff4d4d;
+    box-shadow: 0 0 0 0.2rem rgba(255, 77, 77, 0.25);
+}
+
+.appointment-card {
+    background: linear-gradient(135deg, #ff0000, #000000);
+    border-radius: 16px;
+    color: #fff;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    transition: transform 0.3s ease;
+}
+

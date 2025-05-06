@@ -116,7 +116,17 @@ namespace HMS.web.Controllers
             //    .Include(a => a.Doctor)
             //    .ToList();
             var json = Request.Cookies["PatientAppointments"];
-            var appointments = JsonSerializer.Deserialize<List<AppointmentDTO>>(json);
+            var appointments = JsonSerializer.Deserialize<List<Appointment>>(json);
+
+            var appointmentDTOs = appointments.Select(a => new AppointmentDTO
+            {
+                AppointmentId = a.AppointmentId,
+                AppointmentDate = a.AppointmentDate,
+                Description = a.Description,
+                isApproved = a.isApproved,
+                DoctorName = a.Doctor?.Name, // assuming Doctor has a Name property
+                Doctor_Specialization = a.Doctor?.Specialization // assuming Doctor has a Specialization property
+            }).ToList();
 
 
             var model = new ProfileViewModel
@@ -124,7 +134,7 @@ namespace HMS.web.Controllers
                 Disease = user.Disease,
                 Name = user.Name,
                 Email = user.Email,
-                Appointments = appointments
+                Appointments = appointmentDTOs 
             };
 
             return View(model);
@@ -221,19 +231,15 @@ namespace HMS.web.Controllers
                         var user1 = _context.Users.OfType<Patient>()
                         .Include(p => p.Appointments)  // This ensures the Appointments are loaded
                         .FirstOrDefault(u => u.Id == user.Id);
-
-                        var appointments = user1.Appointments ?? new List<Appointment>();
-
-                        var appointmentsList = appointments.Select(a => new AppointmentDTO
+                        var appointmentsList = (user1.Appointments.Select(a => new AppointmentDTO
                         {
                             AppointmentId = a.AppointmentId,
                             AppointmentDate = a.AppointmentDate,
                             Description = a.Description,
-                            isApproved = a.isApproved,
-                            DoctorName = a.Doctor?.Name ?? "Unknown",
-                            Doctor_Specialization = a.Doctor?.Specialization ?? "Unknown"
-                        }).ToList();
-
+                            DoctorName = a.Doctor.Name,
+                            Doctor_Specialization = a.Doctor.Specialization,
+                            isApproved = a.isApproved
+                        })).ToList();
 
 
                         HttpContext.Response.Cookies.Append("PatientAppointments", JsonSerializer.Serialize(appointmentsList));

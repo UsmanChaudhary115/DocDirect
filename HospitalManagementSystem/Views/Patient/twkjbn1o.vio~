@@ -17,29 +17,29 @@
             <form asp-action="UpdateProfile" method="post">
                 <div class="mb-3">
                     <label class="form-label fw-semibold">Full Name</label>
-                    <input asp-for="Name" class="form-control bg-dark text-light" />
+                    <input asp-for="Name" class="form-control bg-dark text-light border-0" />
                 </div>
                 <div class="mb-3">
                     <label class="form-label fw-semibold">Email</label>
-                    <input asp-for="Email" class="form-control bg-dark text-light" />
+                    <input asp-for="Email" class="form-control bg-dark text-light border-0" />
                 </div>
                 <div class="mb-3">
                     <label class="form-label fw-semibold">Disease</label>
-                    <input asp-for="Disease" class="form-control bg-dark text-light" />
+                    <input asp-for="Disease" class="form-control bg-dark text-light border-0" />
                 </div>
                 <hr class="border-light" />
-                <h5 class="fw-semibold mb-3 text-light">Change Password</h5>
+                <h5 class="fw-semibold mb-3">Change Password</h5>
                 <div class="mb-3">
                     <label class="form-label fw-semibold">New Password</label>
-                    <input asp-for="NewPassword" class="form-control bg-dark text-light" type="password" placeholder="Enter new password" />
+                    <input asp-for="NewPassword" class="form-control bg-dark text-light border-0" type="password" placeholder="Enter new password" />
                 </div>
                 <div class="mb-3">
                     <label class="form-label fw-semibold">Confirm New Password</label>
-                    <input asp-for="ConfirmPassword" class="form-control bg-dark text-light" type="password" placeholder="Confirm new password" />
+                    <input asp-for="ConfirmPassword" class="form-control bg-dark text-light border-0" type="password" placeholder="Confirm new password" />
                 </div>
                 <div class="mb-3">
                     <label class="form-label fw-semibold">Old Password</label>
-                    <input asp-for="OldPassword" class="form-control bg-dark text-light" type="password" placeholder="Old password" />
+                    <input asp-for="OldPassword" class="form-control bg-dark text-light border-0" type="password" placeholder="Old password" />
                 </div>
                 <button type="submit" class="btn btn-primary w-100 mt-3">Update Profile</button>
             </form>
@@ -97,10 +97,6 @@
             background-color: #cc0000;
             border-color: #cc0000;
         }
-
-    .form-control::placeholder {
-        color: #bbb;
-    }
 </style>
 
 

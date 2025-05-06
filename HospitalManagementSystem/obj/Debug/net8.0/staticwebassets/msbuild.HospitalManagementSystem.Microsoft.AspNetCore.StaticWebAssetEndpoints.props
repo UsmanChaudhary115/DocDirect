@@ -1131,14 +1131,14 @@
     <StaticWebAssetEndpoint Include="_content/HospitalManagementSystem/css/site.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-S8kY4g5BTuKBr38/0/U7oYupzXv7sL6ZqoSWSOBVZUk="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"2281"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022S8kY4g5BTuKBr38/0/U7oYupzXv7sL6ZqoSWSOBVZUk=\u0022"},{"Name":"Last-Modified","Value":"Sat, 05 Apr 2025 21:22:29 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-AhK6A7kOKBR6XrBwvcLk1r8BitQ8LI/4hEtBU3pLK2w="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"3000"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022AhK6A7kOKBR6XrBwvcLk1r8BitQ8LI/4hEtBU3pLK2w=\u0022"},{"Name":"Last-Modified","Value":"Tue, 06 May 2025 15:13:57 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/HospitalManagementSystem/css/site.dy2nkhxhyb.css">
+    <StaticWebAssetEndpoint Include="_content/HospitalManagementSystem/css/site.etekqco0os.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"dy2nkhxhyb"},{"Name":"integrity","Value":"sha256-S8kY4g5BTuKBr38/0/U7oYupzXv7sL6ZqoSWSOBVZUk="},{"Name":"label","Value":"_content/HospitalManagementSystem/css/site.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2281"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022S8kY4g5BTuKBr38/0/U7oYupzXv7sL6ZqoSWSOBVZUk=\u0022"},{"Name":"Last-Modified","Value":"Sat, 05 Apr 2025 21:22:29 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"etekqco0os"},{"Name":"integrity","Value":"sha256-AhK6A7kOKBR6XrBwvcLk1r8BitQ8LI/4hEtBU3pLK2w="},{"Name":"label","Value":"_content/HospitalManagementSystem/css/site.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"3000"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022AhK6A7kOKBR6XrBwvcLk1r8BitQ8LI/4hEtBU3pLK2w=\u0022"},{"Name":"Last-Modified","Value":"Tue, 06 May 2025 15:13:57 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/HospitalManagementSystem/favicon.61n19gt1b8.ico">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\favicon.ico'))</AssetFile>
@@ -1192,13 +1192,13 @@
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\HospitalManagementSystem.rfbt7xtogl.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-Jzrmgks2H4BEve9thfo7\u002BVNxXsl\u002BVZNSqT2LeGcBvxg="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"2291"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022Jzrmgks2H4BEve9thfo7\u002BVNxXsl\u002BVZNSqT2LeGcBvxg=\u0022"},{"Name":"Last-Modified","Value":"Mon, 07 Apr 2025 07:22:38 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"2291"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022Jzrmgks2H4BEve9thfo7\u002BVNxXsl\u002BVZNSqT2LeGcBvxg=\u0022"},{"Name":"Last-Modified","Value":"Thu, 01 May 2025 15:40:34 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/HospitalManagementSystem/HospitalManagementSystem.rfbt7xtogl.bundle.scp.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\HospitalManagementSystem.rfbt7xtogl.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"rfbt7xtogl"},{"Name":"integrity","Value":"sha256-Jzrmgks2H4BEve9thfo7\u002BVNxXsl\u002BVZNSqT2LeGcBvxg="},{"Name":"label","Value":"_content/HospitalManagementSystem/HospitalManagementSystem.bundle.scp.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2291"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022Jzrmgks2H4BEve9thfo7\u002BVNxXsl\u002BVZNSqT2LeGcBvxg=\u0022"},{"Name":"Last-Modified","Value":"Mon, 07 Apr 2025 07:22:38 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2291"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022Jzrmgks2H4BEve9thfo7\u002BVNxXsl\u002BVZNSqT2LeGcBvxg=\u0022"},{"Name":"Last-Modified","Value":"Thu, 01 May 2025 15:40:34 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/HospitalManagementSystem/img/about.84m1ri6cte.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\about.jpg'))</AssetFile>
